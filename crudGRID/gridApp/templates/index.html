@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Добавить сотрудника {% endblock %}
+
+{% block content %}
+<h4>Django CRUD</h4>
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/addnew">
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Добавить Сотрудника</h3>
+                </div>
+                </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Имя Сотрудника:</label>
+                <div class="col-sm-4">
+                    {{form.name}}
+                </div>
+                </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Емайл Сотрудника:</label>
+                <div class="col-sm-4">
+                    {{form.email}}
+                </div>
+                </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Контакт Сотрудника:</label>
+                <div class="col-sm-4">
+                    {{form.contact}}
+                </div>
+                </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+                </div>
+
+        </div>
+    </form>
+</div>
+{% endblock content %}
